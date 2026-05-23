@@ -1,0 +1,38 @@
+:root {
+  --accent: #c9a84c;
+
+  /* --accent: #f5a623;    🟡 ذهبي  */
+  /* --accent: #00c896;    🟢 زمردي   */
+  /* --accent: #c0001a;    🔴 أحمر    */
+  /* --accent: #1a3fff;    🔵 ملكي    */
+  /* --accent: #ff6200;    🟠 برتقالي */
+
+  /* مشتقات أوتوماتيك من اللون */
+  --accent-10: color-mix(in srgb, var(--accent) 10%, transparent);
+  --accent-20: color-mix(in srgb, var(--accent) 20%, transparent);
+  --accent-30: color-mix(in srgb, var(--accent) 30%, transparent);
+  --accent-soft: color-mix(in srgb, var(--accent) 8%, #050505);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at top left, var(--accent-20) 0%, transparent 75%),
+    radial-gradient(
+      ellipse at bottom right,
+      var(--accent-10) 0%,
+      transparent 60%
+    ),
+    #050505;
+  color: #f0f0f0;
+  font-family: "Tajawal", sans-serif;
+}
+/* @font-face {
+  font-family: "Hello Shine";
+  src:
+    url("../assets/fonts/Hello Shine.ttf") format("truetype"),
+    url("../assets/fonts/Hello Shine.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+} */

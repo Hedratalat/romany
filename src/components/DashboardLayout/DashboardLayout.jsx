@@ -1,0 +1,20 @@
+import { useState } from "react";
+import { Outlet } from "react-router-dom";
+import NavBarDash from "../NavBarDash/NavBarDash";
+import SideBarDash from "../SideBarDash/SideBarDash";
+
+export default function DashBoardLayout() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  return (
+    <div className="min-h-screen flex flex-col lg:flex-row bg-hero">
+      <SideBarDash isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
+      <div className="flex-1 flex flex-col">
+        <NavBarDash onMenuClick={() => setIsSidebarOpen(true)} />
+        <main className="flex-1 p-4 sm:p-6 overflow-y-auto">
+          <Outlet />
+        </main>
+      </div>
+    </div>
+  );
+}
